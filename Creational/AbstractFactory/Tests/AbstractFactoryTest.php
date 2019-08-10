@@ -37,7 +37,7 @@ class AbstractFactoryTest extends TestCase
     {
         $factory = new ProductFactory();
         $product = $factory->createShippableProduct(150);
-
-        $this->assertEquals(200, $product->calculatePrice());
+        
+        $this->assertEquals(150 + $product->getShippingCosts(), $product->calculatePrice());
     }
 }
